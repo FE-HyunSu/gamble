@@ -22,6 +22,11 @@ const globalStyleSheet = (): SerializedStyles => css`
     border: none;
     background-color: transparent;
   }
+
+  a {
+    text-decoration: none;
+    color: ${COLORS.BLACK};
+  }
 `;
 
 const GlobalStyle = () => {

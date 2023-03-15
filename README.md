@@ -39,10 +39,11 @@
 
 ## Features
 
-- [x] husky를 이용해 푸시 이전 단계에서 테스팅
-  - [x] 정적 검사 (Lint & Prettier)
-  - [x] 단위 테스트 (Jest)
-  - [x] E2E 테스트 (Cypress)
+- [x] 배포 파이프라인 구성
+  - [x] husky를 이용해 푸시 이전 단계에서 테스팅
+    - [x] 정적 검사 (Lint & Prettier)
+    - [x] 단위 테스트 (Jest)
+  - [x] 메인 PR시 GitHub Action을 통한 E2E 테스트 (Cypress)
 - [x] StoryBook을 통한 공통 컴포넌트 스니펫 제공
 - [x] portal을 이용하여 Headless 컴포넌트 형식으로 모달 작성
   > 모달, 토스트, ...
@@ -52,9 +53,8 @@
   > rem, media-query, ...
 - [x] 모바일 환경 대응
   > 크로스 브라우징 (safari 스타일링 이슈, ...)
-- [x] 웹 접근성 및 성능 최적화
-<img width="400" src="https://user-images.githubusercontent.com/82315118/221235286-625cf4ce-9c12-4850-be70-a381afb644d0.png" />
-
+  <!-- - [x] 웹 접근성 및 성능 최적화
+  <img width="400" src="https://user-images.githubusercontent.com/82315118/221235286-625cf4ce-9c12-4850-be70-a381afb644d0.png" /> -->
 
 <details>
   <summary>

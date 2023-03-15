@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import {FC, Fragment, useMemo} from 'react';
 import {useRecoilState} from 'recoil';
+import Link from 'next/link';
 import {rem} from '@styles/theme';
 import useTranslate from '@hooks/useTranslate';
 import {IMAGES} from '@constants/image';
 import GradientShadow from '@views/@common/GradientShadow';
 import {soundMuteAtom} from '@store/sound';
+import {ROUTES} from '@constants/routes';
 
 const GNB: FC = () => {
   const {changeLangType} = useTranslate();
@@ -22,7 +24,9 @@ const GNB: FC = () => {
   return (
     <Fragment>
       <Container>
-        <h1>GAMBLE</h1>
+        <Link href={ROUTES.GAMBLE}>
+          <h1>GAMBLE</h1>
+        </Link>
         <LocaleButton onClick={changeLangType}>
           <LocaleButtonImage src={IMAGES.WORLD} alt={'언어 변경 아이콘'} />
         </LocaleButton>

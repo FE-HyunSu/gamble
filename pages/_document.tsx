@@ -5,6 +5,7 @@ const Document = () => {
     <Html lang="ko">
       <Head />
       <title>GAMBLE</title>
+      <meta name="title" content="gamble" />
       <meta name="description" content="What was I in my previous life? Make your own animal avatar through gambling" />
       <meta name="keywords" content="gamble,mbti,도박,MBTI,양산형 MBTI" />
       <body>
