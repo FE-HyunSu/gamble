@@ -5,6 +5,7 @@ import useTranslate from '@hooks/useTranslate';
 
 const GambleResetModalContent: FC = () => {
   const {translate} = useTranslate();
+
   return (
     <Container>
       <Title>{translate('RETRY_MESSAGE1')}</Title>
