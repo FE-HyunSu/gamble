@@ -7,7 +7,7 @@ import {ROUTES} from '@constants/routes';
 import {useModal} from '@hooks/useModal';
 import useEffectOnce from '@hooks/useEffectOnce';
 import {rem} from '@styles/theme';
-import OnboardingModal from './OnboardingModal';
+import OnboardingModal from './components/Onboarding';
 
 const HomeScreen: FC = () => {
   const router = useRouter();
@@ -15,6 +15,7 @@ const HomeScreen: FC = () => {
   const onboardingModalProps = useModal();
 
   // TODO: 온보딩 모달 뜨는 조건 추가
+  // 로컬 스토리지를 기반으로 하면될듯 || auth 기능을 붙혀버리자
   useEffectOnce(() => onboardingModalProps.showModal());
 
   return (

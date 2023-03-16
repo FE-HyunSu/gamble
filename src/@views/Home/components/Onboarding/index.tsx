@@ -1,11 +1,14 @@
-import {FC, useCallback, useState} from 'react';
+import {FC, useCallback, useMemo, useState} from 'react';
 import styled from '@emotion/styled';
 import BaseModal from '@views/@common/Modals/BaseModal';
 import {ModalProps} from '@hooks/useModal';
 import {COLORS, rem} from '@styles/theme';
 import {IMAGES} from '@constants/image';
+import OnboardingStep1 from './components/Step1';
+import OnboardingStep2 from './components/Step2';
+import OnboardingStep3 from './components/Step3';
 
-const ONBOARDING_MODAL_TOTAL_STEP = 4;
+const ONBOARDING_MODAL_TOTAL_STEP = 3;
 
 const enum IndicatorButtonType {
   PREV,
@@ -34,6 +37,22 @@ const OnboardingModal: FC<Props> = ({modalProps}) => {
     [step]
   );
 
+  const content = useMemo(() => {
+    if (step === 1) {
+      return <OnboardingStep1 />;
+    }
+
+    if (step === 2) {
+      return <OnboardingStep2 />;
+    }
+
+    if (step === ONBOARDING_MODAL_TOTAL_STEP) {
+      return <OnboardingStep3 />;
+    }
+
+    return null;
+  }, [step]);
+
   if (modalProps.modalShowing) {
     return (
       <BaseModal modalProps={modalProps}>
@@ -41,7 +60,7 @@ const OnboardingModal: FC<Props> = ({modalProps}) => {
           <IndicatorButtonWrapper onClick={() => onIndicatorClick(IndicatorButtonType.PREV)}>
             <IndicatorImg src={IMAGES.LEFT_ARROW} alt="온보딩 모달 이전 화면 이동 버튼" />
           </IndicatorButtonWrapper>
-          <Content>{step}</Content>
+          <Content>{content}</Content>
           <IndicatorButtonWrapper onClick={() => onIndicatorClick(IndicatorButtonType.NEXT)}>
             <IndicatorImg src={IMAGES.RIGHT_ARROW} alt="온보딩 모달 다음 화면 이동 버튼 " />
           </IndicatorButtonWrapper>
