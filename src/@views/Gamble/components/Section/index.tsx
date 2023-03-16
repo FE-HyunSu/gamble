@@ -2,11 +2,10 @@ import styled from '@emotion/styled';
 import {FC, Fragment, useMemo} from 'react';
 import BaseButton from '@components/BaseButton';
 import {COLORS, rem} from '@styles/theme';
-import {AbilityType, GambleProps, GambleSectionList} from '@hooks/gamble/useGamble';
+import {AbilityType, checkGambleChance, GambleProps, GambleSectionList} from '@hooks/gamble/useGamble';
 import {IMAGES} from '@constants/image';
 import useTranslate from '@hooks/useTranslate';
-import {checkGambleChance} from '@utils/filters';
-import Score from './Score';
+import Score from './components/Score';
 
 interface Props {
   type: GambleSectionList;
@@ -133,7 +132,7 @@ const ActionContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: 24%;
 `;
 
 const ProgressionWrapper = styled.div<{isFinish: boolean}>`

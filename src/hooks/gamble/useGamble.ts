@@ -8,8 +8,11 @@ import useEffectOnce from '@hooks/useEffectOnce';
 import {probabilityAtom} from '@store/gamble/probability';
 import useSound from '@hooks/useSound';
 import {SOUNDS} from '@constants/sound';
-import {checkGambleChance} from '@utils/filters';
 import {soundMuteAtom} from '@store/sound';
+
+export const checkGambleChance = (scores: GambleEnchantType[]) => {
+  return scores.filter((score) => score === GambleEnchantType.PENDING).length;
+};
 
 export const enum AbilityType {
   STRENGTH = 'STRENGTH',
