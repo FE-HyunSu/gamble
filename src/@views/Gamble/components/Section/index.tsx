@@ -133,6 +133,7 @@ const ActionContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 20%;
 `;
 
 const ProgressionWrapper = styled.div<{isFinish: boolean}>`
