@@ -18,9 +18,9 @@ describe('gamble', () => {
   });
 
   it('결과 확인하기', () => {
-    completeGamble(() => cy.get(':nth-child(1) > .css-aefe7y > .css-ab6uec > .css-157mnpu').click());
-    completeGamble(() => cy.get(':nth-child(2) > .css-aefe7y > .css-ab6uec > .css-157mnpu').click());
-    completeGamble(() => cy.get('.css-rvc0g2 > .css-ab6uec > .css-157mnpu').click());
+    completeGamble(() => cy.get(':nth-child(1) > .css-aefe7y > .css-1bu5vhi > .css-157mnpu').click());
+    completeGamble(() => cy.get(':nth-child(2) > .css-aefe7y > .css-1bu5vhi > .css-157mnpu').click());
+    completeGamble(() => cy.get('.css-rvc0g2 > .css-1bu5vhi > .css-157mnpu').click());
     cy.wait(2000);
   });
 });
