@@ -7,6 +7,8 @@ import {ROUTES} from '@constants/routes';
 import {useModal} from '@hooks/useModal';
 import useEffectOnce from '@hooks/useEffectOnce';
 import {rem} from '@styles/theme';
+import {getLocalStorageItems, setLocalStorageItems} from '@utils/storage';
+import {STORAGE_KEY} from '@constants/key';
 import OnboardingModal from './components/Onboarding';
 
 const HomeScreen: FC = () => {
@@ -14,9 +16,13 @@ const HomeScreen: FC = () => {
   const {translate} = useTranslate();
   const onboardingModalProps = useModal();
 
-  // TODO: 온보딩 모달 뜨는 조건 추가
-  // 로컬 스토리지를 기반으로 하면될듯 || auth 기능을 붙혀버리자
-  useEffectOnce(() => onboardingModalProps.showModal());
+  useEffectOnce(() => {
+    const isOB = getLocalStorageItems(STORAGE_KEY.GUEST);
+    if (!isOB) {
+      onboardingModalProps.showModal();
+      setLocalStorageItems(STORAGE_KEY.GUEST, true);
+    }
+  });
 
   return (
     <Fragment>

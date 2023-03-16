@@ -10,4 +10,5 @@ export const ATOM_KEY = {
 
 export const STORAGE_KEY = {
   LOCALE: 'LOCALSTORAGE_LOCALE',
+  GUEST: 'LOCALSTORAGE_GUEST',
 };
