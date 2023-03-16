@@ -5,7 +5,7 @@ import {COLORS, rem} from '@styles/theme';
 import {AbilityType, checkGambleChance, GambleProps, GambleSectionList} from '@hooks/gamble/useGamble';
 import {IMAGES} from '@constants/image';
 import useTranslate from '@hooks/useTranslate';
-import Score from './Score';
+import Score from './components/Score';
 
 interface Props {
   type: GambleSectionList;
