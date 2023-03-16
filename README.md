@@ -44,6 +44,7 @@
     - [x] 정적 검사 (Lint & Prettier)
     - [x] 단위 테스트 (Jest)
   - [x] 메인 PR시 GitHub Action을 통한 E2E 테스트 (Cypress)
+  - [x] 메인 PR시 브랜치 이름을 기준으로 Action 발행
 - [x] StoryBook을 통한 공통 컴포넌트 스니펫 제공
 - [x] portal을 이용하여 Headless 컴포넌트 형식으로 모달 작성
   > 모달, 토스트, ...

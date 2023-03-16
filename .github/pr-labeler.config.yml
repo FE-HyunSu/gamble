@@ -1,0 +1,7 @@
+'feat': ['feature/*', 'feat/*']
+'refactor': 'refactor/*'
+'test': 'test/*'
+'package': 'package/*'
+'bug': 'fix/*'
+'style': 'style/*'
+'optimization': 'optimization/*'
