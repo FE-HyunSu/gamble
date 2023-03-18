@@ -1,4 +1,4 @@
-import {AbilityType} from '@hooks/gamble/useGamble';
+import {AbilityType} from '@views/Gamble/hooks/useGamble';
 
 export const randomNumberGenerator = (numberRange: number) => Math.floor(Math.random() * numberRange);
 

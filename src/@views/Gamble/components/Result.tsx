@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import {FC, Fragment, memo, useMemo} from 'react';
 import {useRecoilValue} from 'recoil';
 import {rem} from '@styles/theme';
-import useGambleResult from '@hooks/gamble/useGambleResult';
 import useTranslate from '@hooks/useTranslate';
 import {soundMuteAtom} from '@store/sound';
+import useGambleResult from '../hooks/useGambleResult';
 
 const Result: FC = () => {
   const {translate} = useTranslate();

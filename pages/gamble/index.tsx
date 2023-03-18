@@ -1,6 +1,6 @@
 import {ReactElement} from 'react';
 import GambleScreen from '@views/Gamble/index';
-import {AbilityType} from '@hooks/gamble/useGamble';
+import {AbilityType} from '@views/Gamble/hooks/useGamble';
 import {abilitiesGenerator} from '@utils/generators';
 import Layout from '@views/@common/Layout';
 import GNB from '@views/@common/Layout/components/GNB';

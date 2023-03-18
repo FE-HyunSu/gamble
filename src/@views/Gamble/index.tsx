@@ -1,8 +1,8 @@
 import {FC, Fragment, useCallback} from 'react';
 import styled from '@emotion/styled';
 import BaseButton from '@components/BaseButton';
-import {COLORS, rem} from '@styles/theme';
-import useGamble, {AbilityType} from '@hooks/gamble/useGamble';
+import {rem} from '@styles/theme';
+import useGamble, {AbilityType} from '@views/Gamble/hooks/useGamble';
 import {useModal} from '@hooks/useModal';
 import ConfirmModal from '@views/@common/Modals/ConfirmModal';
 import {useToast} from '@hooks/useToast';
@@ -21,6 +21,14 @@ const GambleScreen: FC<Props> = ({abilities}) => {
   const {translate} = useTranslate();
 
   const handleResetClick = useCallback(() => {
+    if (gamble.isOver) {
+      gamble.reset();
+    } else {
+      resetModalProps.showModal();
+    }
+  }, [gamble, resetModalProps]);
+
+  const handleReset = useCallback(() => {
     gamble.reset();
     resetModalProps.hideModal();
     showToast(`${translate('INITIALIZED')}`);
@@ -31,24 +39,10 @@ const GambleScreen: FC<Props> = ({abilities}) => {
       <main>
         <GambleBoard isOver={gamble.isOver} gamble={gamble} />
         <ButtonsWrapper>
-          <BaseButton
-            value={translate('RETRY')}
-            width={250}
-            onClick={() => {
-              if (gamble.isOver) {
-                gamble.reset();
-              } else {
-                resetModalProps.showModal();
-              }
-            }}
-          />
+          <BaseButton value={translate('RETRY')} width={250} onClick={handleResetClick} />
         </ButtonsWrapper>
       </main>
-      <ConfirmModal
-        modalProps={resetModalProps}
-        onConfirmClick={handleResetClick}
-        content={<GambleResetModalContent />}
-      />
+      <ConfirmModal modalProps={resetModalProps} onConfirmClick={handleReset} content={<GambleResetModalContent />} />
     </Fragment>
   );
 };

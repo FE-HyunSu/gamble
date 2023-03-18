@@ -6,22 +6,35 @@ import useTranslate from '@hooks/useTranslate';
 import {ROUTES} from '@constants/routes';
 import {useModal} from '@hooks/useModal';
 import useEffectOnce from '@hooks/useEffectOnce';
-import {rem} from '@styles/theme';
-import OnboardingModal from './OnboardingModal';
+import {COLORS, rem} from '@styles/theme';
+import {getLocalStorageItems, setLocalStorageItems} from '@utils/storage';
+import {STORAGE_KEY} from '@constants/key';
+import OnboardingModal from './components/OnboardingModal';
 
 const HomeScreen: FC = () => {
   const router = useRouter();
   const {translate} = useTranslate();
   const onboardingModalProps = useModal();
 
-  // TODO: 온보딩 모달 뜨는 조건 추가
-  useEffectOnce(() => onboardingModalProps.showModal());
+  useEffectOnce(() => {
+    const isOB = getLocalStorageItems(STORAGE_KEY.GUEST);
+    // if (!isOB) {
+    onboardingModalProps.showModal();
+    // setLocalStorageItems(STORAGE_KEY.GUEST, true);
+    // }
+  });
 
   return (
     <Fragment>
       <Container>
-        <Content>framer-motion을 이용한 예쁜 애니메이트 이미지</Content>
-        <BaseButton value={translate('GO_TO_GAMBLE')} onClick={() => router.push(ROUTES.GAMBLE)} />
+        <BaseButton
+          value={translate('GO_TO_GAMBLE')}
+          onClick={() => router.push(ROUTES.GAMBLE)}
+          width={200}
+          height={150}
+          borderColor={COLORS.AQUA}
+          textColor={COLORS.RED}
+        />
       </Container>
       <OnboardingModal modalProps={onboardingModalProps} />
     </Fragment>
@@ -32,8 +45,8 @@ export default HomeScreen;
 
 const Container = styled.div`
   padding: ${rem(16)};
-`;
-
-const Content = styled.main`
-  margin: ${rem(40)} 0;
+  padding-top: ${rem(200)};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

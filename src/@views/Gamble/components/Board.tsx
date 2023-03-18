@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import styled from '@emotion/styled';
-import {GambleProps} from '@hooks/gamble/useGamble';
+import {GambleProps} from '@views/Gamble/hooks/useGamble';
 import {rem} from '@styles/theme';
 import Spinner from '@views/@common/Spinner';
 import Result from './Result';

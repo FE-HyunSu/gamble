@@ -1,5 +1,6 @@
 {
-  "plugins": ["import"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["import", "@typescript-eslint"],
   "extends": ["next/core-web-vitals"],
   "rules": {
     "import/order": [
@@ -15,8 +16,8 @@
         ],
         "pathGroupsExcludedImportTypes": ["react"]
       }
-    ]
-    // TODO: next page props & const enum not use warning solve
-    // "no-unused-vars": "warn"
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"]
   }
 }

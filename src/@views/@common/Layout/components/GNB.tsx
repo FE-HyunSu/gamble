@@ -24,7 +24,7 @@ const GNB: FC = () => {
   return (
     <Fragment>
       <Container>
-        <Link href={ROUTES.GAMBLE}>
+        <Link href={ROUTES.HOME}>
           <h1>GAMBLE</h1>
         </Link>
         <LocaleButton onClick={changeLangType}>
