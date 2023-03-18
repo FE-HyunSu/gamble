@@ -1,4 +1,4 @@
-import {AbilityType} from '@hooks/gamble/useGamble';
+import {AbilityType} from '@views/Gamble/hooks/useGamble';
 import {abilitiesGenerator, randomNumberArrayGenerator, randomNumberGenerator} from '@utils/generators';
 
 describe('[유틸] randomNumberGenerator', () => {

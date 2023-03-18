@@ -48,6 +48,8 @@ export interface GambleProps {
   reset: () => void;
 }
 
+export const GAMBLE_SCORE_INIT_DATA = Array(10).fill(GambleEnchantType.PENDING);
+
 const useGamble = (abilities: AbilityType[]): GambleProps => {
   const [probability, setProbability] = useRecoilState(probabilityAtom);
   const [positive1, setPositive1] = useRecoilState(positive1Atom);
@@ -64,19 +66,6 @@ const useGamble = (abilities: AbilityType[]): GambleProps => {
       checkGambleChance(negative.score) === 0,
     [negative.score, positive1.score, positive2.score]
   );
-
-  const GAMBLE_SCORE_INIT_DATA = [
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-    GambleEnchantType.PENDING,
-  ];
 
   const init = () => {
     setPositive1({score: GAMBLE_SCORE_INIT_DATA, ability: abilities[0]});

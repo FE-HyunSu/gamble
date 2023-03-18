@@ -2,7 +2,7 @@ import {FC, Fragment, useCallback} from 'react';
 import styled from '@emotion/styled';
 import BaseButton from '@components/BaseButton';
 import {rem} from '@styles/theme';
-import useGamble, {AbilityType} from '@hooks/gamble/useGamble';
+import useGamble, {AbilityType} from '@views/Gamble/hooks/useGamble';
 import {useModal} from '@hooks/useModal';
 import ConfirmModal from '@views/@common/Modals/ConfirmModal';
 import {useToast} from '@hooks/useToast';

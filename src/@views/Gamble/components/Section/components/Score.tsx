@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import {FC} from 'react';
 import {COLORS, rem} from '@styles/theme';
-import {GambleEnchantType} from '@hooks/gamble/useGamble';
+import {GambleEnchantType} from '@views/Gamble/hooks/useGamble';
 
 interface Props {
   scoreArr: GambleEnchantType[];

@@ -18,10 +18,10 @@ const HomeScreen: FC = () => {
 
   useEffectOnce(() => {
     const isOB = getLocalStorageItems(STORAGE_KEY.GUEST);
-    if (!isOB) {
-      onboardingModalProps.showModal();
-      setLocalStorageItems(STORAGE_KEY.GUEST, true);
-    }
+    // if (!isOB) {
+    onboardingModalProps.showModal();
+    // setLocalStorageItems(STORAGE_KEY.GUEST, true);
+    // }
   });
 
   return (

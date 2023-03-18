@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import {FC, Fragment, useMemo} from 'react';
 import BaseButton from '@components/BaseButton';
 import {COLORS, rem} from '@styles/theme';
-import {AbilityType, checkGambleChance, GambleProps, GambleSectionList} from '@hooks/gamble/useGamble';
+import {AbilityType, checkGambleChance, GambleProps, GambleSectionList} from '@views/Gamble/hooks/useGamble';
 import {IMAGES} from '@constants/image';
 import useTranslate from '@hooks/useTranslate';
 import Score from './components/Score';
