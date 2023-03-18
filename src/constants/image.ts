@@ -18,3 +18,7 @@ export const IMAGES = {
   RIGHT_ARROW: 'icon/right-arrow.png',
   LEFT_ARROW: 'icon/left-arrow.png',
 };
+
+export const ONBOARDING_IMAGES = {
+  SCENE1: '/img/onboarding/onboarding1.png',
+};
