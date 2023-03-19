@@ -1,6 +1,6 @@
 import {FC, Fragment, useCallback} from 'react';
 import styled from '@emotion/styled';
-import BaseButton from '@components/BaseButton';
+import EffectButton from '@components/EffectButton';
 import {rem} from '@styles/theme';
 import useGamble, {AbilityType} from '@views/Gamble/hooks/useGamble';
 import {useModal} from '@hooks/useModal';
@@ -39,7 +39,7 @@ const GambleScreen: FC<Props> = ({abilities}) => {
       <main>
         <GambleBoard isOver={gamble.isOver} gamble={gamble} />
         <ButtonsWrapper>
-          <BaseButton value={translate('RETRY')} width={250} onClick={handleResetClick} />
+          <EffectButton value={translate('RETRY')} width={250} onClick={handleResetClick} type={`wave`} />
         </ButtonsWrapper>
       </main>
       <ConfirmModal modalProps={resetModalProps} onConfirmClick={handleReset} content={<GambleResetModalContent />} />

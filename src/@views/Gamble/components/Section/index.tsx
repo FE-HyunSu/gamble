@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {FC, Fragment, useMemo} from 'react';
-import BaseButton from '@components/BaseButton';
+import EffectButton from '@components/EffectButton';
 import {COLORS, rem} from '@styles/theme';
 import {AbilityType, checkGambleChance, GambleProps, GambleSectionList} from '@views/Gamble/hooks/useGamble';
 import {IMAGES} from '@constants/image';
@@ -64,7 +64,13 @@ const GambleSection: FC<Props> = ({type, gamble}) => {
             </Content>
 
             <ActionContentWrapper>
-              <BaseButton value={translate('GAMBLE')} onClick={() => enchant(type)} width={60} height={30} />
+              <EffectButton
+                value={translate('GAMBLE')}
+                onClick={() => enchant(type)}
+                width={60}
+                height={30}
+                type={`bounce`}
+              />
               <ProgressionWrapper isFinish={progress === 10}>
                 <p className="progress">
                   {translate('PROGRESSION')}: {progress} / 10

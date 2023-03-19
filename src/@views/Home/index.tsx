@@ -1,7 +1,7 @@
 import {FC, Fragment} from 'react';
 import {useRouter} from 'next/router';
 import styled from '@emotion/styled';
-import BaseButton from '@views/@common/BaseButton';
+import EffectButton from '@views/@common/EffectButton';
 import useTranslate from '@hooks/useTranslate';
 import {ROUTES} from '@constants/routes';
 import {useModal} from '@hooks/useModal';
@@ -27,13 +27,14 @@ const HomeScreen: FC = () => {
   return (
     <Fragment>
       <Container>
-        <BaseButton
+        <EffectButton
           value={translate('GO_TO_GAMBLE')}
           onClick={() => router.push(ROUTES.GAMBLE)}
           width={200}
           height={150}
           borderColor={COLORS.AQUA}
           textColor={COLORS.RED}
+          type={`wave`}
         />
       </Container>
       <OnboardingModal modalProps={onboardingModalProps} />
